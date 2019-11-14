@@ -1,8 +1,7 @@
 import React from 'react'
-import './fonts.css'
 import './styles.css'
 import { Table, TableHeader, TableBody, textCenter, } from '@patternfly/react-table'
-  
+
 class ListComponent extends React.Component {
     constructor(props) {
         super(props);
