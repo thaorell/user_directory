@@ -1,6 +1,7 @@
 import React from 'react'
-import NotFound from './notfound'
+import NotFound from './NotFound'
 
+// Global Error Boundary
 class ErrorBoundary extends React.Component {
     constructor(props) {
       super(props);

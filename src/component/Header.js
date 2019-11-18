@@ -3,6 +3,7 @@ import { PageHeader } from '@patternfly/react-core'
 import { renderStylesToNodeStream } from 'emotion-server';
 import './styles.css'
 
+// PF4 header for all pages
 const HeaderComponent = () => {
     const logo_props = {
         href: '/',

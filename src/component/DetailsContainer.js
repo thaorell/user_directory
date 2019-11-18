@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 import './styles.css'
 import DetailsComponent from "./Details";
 
+// Container component for Details card
 class DetailsContainer extends React.Component {
     constructor(props) {
         super(props);
@@ -21,6 +22,7 @@ class DetailsContainer extends React.Component {
     }
 
     getData(url) {
+        // async fetch call and only grab the one where ID matches url
         fetch(url)
         .then(res => res.json())
         .then((result) => {
@@ -53,6 +55,7 @@ class DetailsContainer extends React.Component {
     render() {
         const { name, email, address, username, phone, website, company, error } = this.state
         return (
+            // call the containing child
             <DetailsComponent
                 name={name}
                 email={email}

@@ -8,7 +8,7 @@ class ListComponent extends React.Component {
         super(props);
         
         this.state = {
-            columns: ['Name', 'Username', 'Email', 'Address'],
+            columns: ['Name', 'Username', 'Email', 'Address'], // columns is always static
             isLoaded: (this.props.list !== [])
         };
     }
@@ -18,6 +18,8 @@ class ListComponent extends React.Component {
         const { list } = this.props
         const { columns } = this.state
         let rows = []
+
+        // grab information from list of users and put them in row cells before PF4 table rendering
         list.map(function (user) {
             rows.push({
                 cells: [
@@ -31,8 +33,10 @@ class ListComponent extends React.Component {
                 ]
             });
         })
+
+        // Parse rows and columns into PF4 
         return (
-            <Table aria-label="Simple Table" cells={columns} rows={rows}>
+            <Table aria-label="Table" cells={columns} rows={rows}>
                 <TableHeader />
                 <TableBody />
             </Table>

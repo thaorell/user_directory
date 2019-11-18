@@ -16,6 +16,7 @@ class DetailsComponent extends React.Component {
             throw new Error("USER NOT FOUND")
         } else {
             let address_string = ""
+            // convert address from object to strings
             if (address) {
                 address_string = address.suite + ", "
                     + address.street + ", "
@@ -24,12 +25,14 @@ class DetailsComponent extends React.Component {
             }
 
             let company_name, catch_phrase, bs
+            // fetch company's information and put them to appropriate strings
             if (company) {
                 company_name = company.name
                 catch_phrase = company.catchPhrase
                 bs = company.bs
             }
-
+            
+            // render in Patternfly Card with Grid
             return (
                 <Card
                     className='card'>

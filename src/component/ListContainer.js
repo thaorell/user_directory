@@ -3,6 +3,7 @@ import './styles.css'
 import PropTypes from 'prop-types';
 import ListComponent from './List'
 
+// Container component for List
 class ListContainer extends React.Component {
     constructor(props) {
         super(props);
@@ -13,6 +14,7 @@ class ListContainer extends React.Component {
         };
     }
 
+    // a customized comparator to sort in alphabetically ascending order
     compare(a, b) {
         if (a.name < b.name) {
             return -1
@@ -24,6 +26,7 @@ class ListContainer extends React.Component {
     }
 
     getData(url) {
+        // async fetch to get information, sort then put it in list
         fetch(url)
             .then(res => res.json())
             .then(
@@ -48,6 +51,7 @@ class ListContainer extends React.Component {
     }
 
     render() {
+        // call the list
         const { list } = this.state
         return <ListComponent list={list}/>
     }

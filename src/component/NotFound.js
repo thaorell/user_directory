@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// Simple 404 page to ask user to redirect to index page
 const NotFound = () => (
     <React.Fragment>
         <center>
