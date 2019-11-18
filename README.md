@@ -10,6 +10,8 @@ yarn install
 yarn dev
 ```
 
+By default, this app is run on `localhost:8080`. 
+
 ### Test (Using Jest, Enzyme):
 ```
 yarn test
