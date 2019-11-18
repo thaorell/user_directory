@@ -1,53 +1,17 @@
 import React from "react";
+import PropTypes from "prop-types"
+
 import { Card, CardHeader, CardBody, CardFooter, Title } from '@patternfly/react-core';
 import { Grid, GridItem } from '@patternfly/react-core';
 import './styles.css'
 
-import ErrorBoundary from './error'
-
 class DetailsComponent extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            error: false,
-            isLoaded: false,
-            name: null,
-            email: null,
-            username: null,
-            address: null,
-            phone: null,
-            website: null,
-            company: null
-        }
-    }
-
-    componentDidMount() {
-        fetch("http://jsonplaceholder.typicode.com/users")
-            .then(res => res.json())
-            .then((result) => {
-                const id = this.props.match.params.id
-                const item = result.find(x => x.id == id);
-                if (item) {
-                    this.setState({
-                        name: item.name,
-                        email: item.email,
-                        username: item.username,
-                        address: item.address,
-                        phone: item.phone,
-                        website: item.website,
-                        company: item.company
-                    })
-                } else {
-                    this.setState({
-                        error: true
-                    })
-                    throw new Error("USER NOT FOUND")
-                }
-            })
     }
 
     render() {
-        const { name, email, address, username, phone, website, company, error } = this.state
+        const { name, email, address, username, phone, website, company, error } = this.props
         if (error) {
             throw new Error("USER NOT FOUND")
         } else {
@@ -98,6 +62,16 @@ class DetailsComponent extends React.Component {
         }
             
     }
+}
+
+DetailsComponent.propTypes = {
+    name: PropTypes.string,
+    email: PropTypes.string,
+    username: PropTypes.string,
+    address: PropTypes.any,
+    phone: PropTypes.string,
+    website: PropTypes.string,
+    company: PropTypes.any,
 }
 
 export default DetailsComponent
