@@ -1,14 +1,14 @@
 {
-  "name": "react-scratch",
+  "name": "user-directory-react",
   "version": "1.0.0",
-  "description": "",
+  "description": "a simple user directory app",
   "main": "index.js",
   "scripts": {
     "test": "jest",
     "dev": "NODE_ENV=development webpack-dev-server  --config ./webpack.config.js",
     "start": "NODE_ENV=production webpack"
   },
-  "author": "",
+  "author": "Charles Thao",
   "license": "ISC",
   "dependencies": {
     "@babel/cli": "^7.7.0",

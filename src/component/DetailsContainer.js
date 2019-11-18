@@ -28,14 +28,14 @@ class DetailsContainer extends React.Component {
             const item = result.find(x => x.id == id);
             if (item) {
                 this.setState({
-                    isLoaded: true,
                     name: item.name,
                     email: item.email,
                     username: item.username,
                     address: item.address,
                     phone: item.phone,
                     website: item.website,
-                    company: item.company
+                    company: item.company,
+                    isLoaded: true,
                 })
             } else {
                 this.setState({

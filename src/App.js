@@ -5,7 +5,7 @@ import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 import ListContainer from './component/ListContainer'
 import DetailsContainer from './component/DetailsContainer'
 import ErrorBoundary from './component/error'
-import NotFound from './component/notfound'
+import NotFound from './component/NotFound'
 
 const link = "http://jsonplaceholder.typicode.com/users"
 class App extends React.Component {

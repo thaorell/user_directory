@@ -8,9 +8,8 @@ import ListComponent from './List'
 import ListContainer from './ListContainer'
 import DetailsComponent from './Details'
 import DetailsContainer from './DetailsContainer'
-import NotFound from './notfound'
+import NotFound from './NotFound'
 import App from '../App';
-import ListContainerComponent from './ListContainer';
 
 
 const sample = [
@@ -49,6 +48,7 @@ global.fetch = jest.fn().mockImplementation(() => {
     })
     return p
 })
+
 describe('Testing list container component', () => {
     it('API is fetched ok and setState works for ListContainer', () => {
         const wrapper = shallow(
@@ -66,7 +66,7 @@ describe('Testing list container component', () => {
         expect(spy).toHaveBeenCalledTimes(1);
     })
 
-    it('Should render correctly with title and description', () => {
+    it('Should render correctly', () => {
         const wrapper = shallow(
             <ListContainer url="link.com" />
         ).dive();
@@ -104,7 +104,7 @@ describe('Testing list component', () => {
 })
 
 describe('Testing details container component', () => {
-    it('should render correctly with title and description', () => {
+    it('Should call componentdidmount', () => {
         const spy = jest.spyOn(DetailsContainer.prototype, 'componentDidMount');
         let wrapper = mount(
             <DetailsContainer url="link.com" />
@@ -112,7 +112,6 @@ describe('Testing details container component', () => {
         wrapper.update()
         expect(spy).toHaveBeenCalledTimes(1);
     })
-
 })
 
 describe('Testing details component', () => {
@@ -142,7 +141,7 @@ describe('Test navigation in router', () => {
                 <App />
             </MemoryRouter>
         );
-        expect(wrapper.find(ListContainerComponent)).toHaveLength(0);
+        expect(wrapper.find(ListContainer)).toHaveLength(0);
         expect(wrapper.find(NotFound)).toHaveLength(1);
     });
 

@@ -72,6 +72,7 @@ DetailsComponent.propTypes = {
     phone: PropTypes.string,
     website: PropTypes.string,
     company: PropTypes.any,
+    error: PropTypes.bool
 }
 
 export default DetailsComponent
